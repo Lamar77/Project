@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Shopping</title>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="/static/nice3.png" class="logo" ></a>
+
+        <div class="search_box_wrap">
+            <div class="form">
+              <input type="text" class="input_search" placeholder="Search product">
+              <button class="normal">Search</button>
+              <span class="search_icon">
+                <ion-icon name="search-outline" class="icon"></ion-icon>
+              </span>
+            </div>
+          </div>
+
+        <div class="">
+            <ul id="navbar">
+                <li><a  href="{{url_for('home')}}">Home</a></li>
+                <li><a class="active" href="{{url_for('shopping')}}">Shop</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+               
+            </ul>
+        </div>
+
+    </section >
+    
+    <section id="hero2">
+        <h4>NEW ARRAIVALS</h4>
+        <h2>Best Price This Year</h2>
+        <h1>On All Products!</h1>
+        <p>Save more when you shop with us & get up to 45% 0ff!</p> 
+        <!-- <button>Shop Now</button> -->
+    
+        </section  >
+
+    <section id="product1" class="section-p1">
+        <h2>POPULAR RIGHT NOW</h2>
+        <P>Don't Miss It!</P>
+        <div class="pro-container">
+          
+            <div class="pro">
+                <img src="/static/sh.png" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>AEROREADY YOGA TRAINING BRA</h5>
+                    <h4>K250 / $15 </h4>
+                </div>
+               
+
+            </div> 
+            <div class="pro">
+                <img src="/static/sh2.png" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>ADICOLOR CLASSICS 3-STRIPES TIGHTS </h5>
+                    <h4>
+                        K680 / $40
+                    </h4>
+                </div>
+               
+
+            </div>
+            <div class="pro">
+            <img src="/static/sh33.png" alt="">
+            <div class="des">
+                <span>Adidas</span>
+                <h5>FUTURE ICONS HYPERPULSE PRINTED LEGGINGS</h5>
+                <h4>
+                    k850 / $50
+                </h4>
+            </div>
+            </div>
+           <div class="pro"><a href="{{url_for('sproduct')}}">
+                <img src="static/sh4.png" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>RICH MNISI DRESS</h5>
+                    <h4>
+                        k850 / $50
+                    </h4>
+                </a>
+                </div>
+               
+
+            </div> 
+            <div class="pro">
+                <img src="static/sh5.png" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>TEAM KEEPER JERSEY (GENDER NEUTRAL)</h5>
+                    <h4>
+                        K250 / $15
+                    </h4>
+                </div>
+               
+
+            </div>
+            <div class="pro">
+            <img src="static/sh9.png" alt="">
+            <div class="des">
+                <span>Nike</span>
+                <h5>Women's Mid-Rise Fleece Joggers</h5>
+                <h4>
+                    K400 / $24
+                </h4>
+            </div>
+            </div>
+            <div class="pro">
+                <img src="static/sh10.png" alt="">
+                <div class="des">
+                    <span>Nike</span>
+                    <h5>Oversized Fleece Hoodie</h5>
+                    <h4>
+                        K224 / $14
+                    </h4>
+                </div>
+               
+
+            </div>
+            <div class="pro">
+            <img src="static/sh11.png" alt="">
+            <div class="des">
+                <span>Nike</span>
+                <h5>Women's Cropped Logo T-Shirt</h5>
+                <h4>
+                    K240 / $15
+                </h4>
+            </div>
+            </div>
+
+            <div class="pro">
+                <img src="static/repl12.png" alt="">
+                <div class="des">
+                    <span>Nike</span>
+                    <h5>Nike Dri-FIT Swoosh Icon Clash</h5>
+                    <h4>
+                        K150/ $8.8
+                    </h4>
+                </div>
+                </div>
+            <div class="pro">
+            <img src="static/sh13.png" alt="">
+            <div class="des">
+                <span>TS</span>
+                <h5>WOMEN'S TS DARK GREEN BIKE SHORTS</h5>
+                <h4>
+                    K250 / $15
+                </h4>
+            </div>
+            </div>
+    
+
+            <div class="pro">
+                <img src="static/sh14.png" alt="">
+                <div class="des">
+                    <span>Apple</span>
+                    <h5>iPhone 13 Pro Max 256GB - Gold</h5>
+                    <h4>
+                        K16,000 / $941
+                    </h4>
+                </div>
+                </div>
+            <div class="pro">
+            <img src="static/sh15.png" alt="">
+            <div class="des">
+                <span>Apple</span>
+                <h5>Apple AirPods with Wireless Charging (3rd Generation)</h5>
+                <h4>
+                    K600 / $35
+                </h4>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="pagination" class="section-p1">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#"><i class="fal fa-long-arrow-alt-right"></i></a>
+
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+          <img class="logo" src="static/nice4.png" alt="">
+          <h4>Contact</h4>
+          <p><strong>Address:</strong> 600 Hillside Road, Street 32, Kabobola</p>
+          <p><strong>Phone:</strong> +024 0975++++++ (+024) 0965++++++ </p>
+          <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+          <div class="follow">
+            <h4>Follow Us</h4>
+            <div class="icon">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-twitter"></i>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col">
+          <h4>About</h4>
+          <a href="#">About Us</a>
+          <a href="#">Delivery Information</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & conditions</a>
+        </div>
+       </footer>
+
+
+    
+</body>
+</html>

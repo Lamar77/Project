@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet"  href="/static/style.css">
+    <title>Payment</title>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="static/nice3.png" class="logo" ></a>
+
+        <div class="">
+            <ul id="navbar">
+                <li><a  href="{{url_for('home')}}">Home</a></li>
+                <li><a class="active" href="{{url_for('shopping')}}">Shop</a></li>
+                <li><a href="{{url_for('payment')}}">About</a></li>
+                <li><a href="">Contact</a></li>
+               
+            </ul>
+        </div>
+
+    </section >
+
+    <section id="payment-box" class="section-p1">
+        <form action="#">
+            <div class="row">
+                <div class="coluz">
+                    <h3 class="title">Billing Address</h3>
+                    <div class="inputbox">
+                        <span>Full Name:</span>
+                        <input type="text" placeholder="type your name here">
+                    </div>
+
+                    <div class="inputbox">
+                        <span>Email:</span>
+                        <input type="email" placeholder="example@gmail.com">
+                    </div>
+
+                    <div class="inputbox">
+                        <span>Address:</span>
+                        <input type="text" placeholder="enter address name here">
+                    </div>
+
+                    <div class="inputbox">
+                        <span>City:</span>
+                        <input type="text" placeholder="enter city name here">
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputbox">
+                            <span>State:</span>
+                            <input type="text" placeholder="type state here">
+                        </div>
+                        <div class="inputbox">
+                            <span>Zip Code:</span>
+                            <input type="text" placeholder="type your zip code here" data-mask="00000">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coluz">
+                    <h3 class="title">Payment</h3>
+
+                    <div class="inputbox">
+                        <span>Cards Accepted:</span>
+                        <img  src="static/payment.png" alt="">
+                    </div>
+
+                    <div class="inputbox">
+                        <span>Card Holder:</span>
+                        <input type="text" placeholder="enter name here">
+                    </div>
+
+                    <div class="inputbox">
+                        <span>Credit Card Number:</span>
+                        <input type="text" placeholder="enter card number here" data-mask="0000 0000 0000 0000">
+                    </div>
+
+                    <div class="inputbox">
+                        <span>Expiry Month:</span>
+                        <input type="text" placeholder="enter exp month here"  data-mask="00">
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputbox">
+                            <span>Expiry Year:</span>
+                            <input type="number" placeholder="type year here" data-mask="0000">
+                        </div>
+                        <div class="inputbox">
+                            <span>CVC:</span>
+                            <input type="number" placeholder="type your cw here" data-mask="000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="proceed to check" class="submit-btn">
+        </form>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+          <img class="logo" src="static/nice4.png" alt="">
+          <h4>Contact</h4>
+          <p><strong>Address:</strong> 600 Hillside Road, Street 32, Kabobola</p>
+          <p><strong>Phone:</strong> +024 0975++++++ (+024) 0965++++++ </p>
+          <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+          <div class="follow">
+            <h4>Follow Us</h4>
+            <div class="icon">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-twitter"></i>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col">
+          <h4>About</h4>
+          <a href="#">About Us</a>
+          <a href="#">Delivery Information</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & conditions</a>
+        </div>
+       </footer>
+
+       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script> 
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet"  href="/static/style.css">
+    <title>Product</title>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="static/nice3.png" class="logo" ></a>
+
+        <div class="">
+            <ul id="navbar">
+                <li><a  href="{{url_for('home')}}">Home</a></li>
+                <li><a class="active" href="{{url_for('shopping')}}">Shop</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+               
+            </ul>
+        </div>
+
+    </section >
+
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img  src="static/sh4.png" width="100%" id="MainImg" alt="">
+        
+          <div class="small-img-group">
+            <div class="small-img-col">
+                <img src="static/spro1.png" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="static/spro2.png" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="static/spro3.png" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="static/spro4.png" width="100%" class="small-img" alt="">
+            </div>
+
+          </div>
+
+
+        </div>
+
+        <div class="single-pro-details">
+            <h6>HOME / RICH MNISI DRESS</h6>
+            <h4>RICH MNISI DRESS</h4>
+            <h2>k850 / $50.00</h2>
+            <select>
+                <option> Select Size </option>
+                <option> XL </option>
+                <option> XXL </option> 
+                <option> small </option>
+                <option> Large</option> 
+            </select>
+            <input class="input" type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h4>Product Details</h4>
+            <span>
+                South African designer Rich Mnisi has carved out his place in the world of fashion by unearthing Africa's hidden treasures and celebrating his heritage. 
+                This adidas dress keeps that same intent alive with an allover animal print that portrays an idyllic world where people and wildlife merge almost seamlessly. 
+                The off-shoulder design shows off a daring look, and the slim fit hugs your body to show off those curves.
+                Our cotton products support more sustainable cotton farming.
+            </span>
+            <section id="single-prod">
+                <button class="buy-button"> <a href="{{url_for('signup')}}">Buy Now</a> </button> 
+            </section>
+        </div>
+    </section>
+
+    <script>
+        var MainImg = document.getElementById("MainImg");
+        var smallimg = document.getElementsByClassName("small-img");
+
+
+        smallimg[0].onclick = function () {
+           MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function () {
+           MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function () {
+           MainImg.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function () {
+           MainImg.src = smallimg[3].src;
+        }
+      </script>
+
+ 
+    
+</body>
+</html>
