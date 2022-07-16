@@ -1,4 +1,5 @@
 from builtins import classmethod, len, print
+from cmath import exp
 import email
 import flask
 from flask import Flask, redirect, render_template, abort, request, request_started, url_for, send_from_directory,flash 
@@ -66,6 +67,26 @@ class SignUpForm(FlaskForm):
  password = PasswordField('Password')
  submit = SubmitField('Submit')
 
+class Payment(FlaskForm):
+ name = StringField('Name')
+ email = StringField('Email Address', [validators.Length(min=6, max=35)])
+ address = StringField('Address')
+ city = StringField('City')
+ state = StringField('State')
+ zip = StringField('Zip')
+ cardh = StringField('Cardh')
+ creditcardn = StringField('Creditcardn')
+ expmon = StringField('Expmon')
+ expyear = StringField('Expyear')
+ cvc = StringField('CVC')
+ submit = SubmitField('Submit')
+
+
+
+
+
+
+
 def is_safe_url(target):
     ref_url = urlparse(request.host_url)
     test_url = urlparse(urljoin(request.host_url, target))
@@ -79,12 +100,9 @@ def login():
     # Here we use a class of some kind to represent and validate our
     # client-side form data. For example, WTForms is a library that will
     # handle this for us, and we use a custom LoginForm to validate.
-    form = LoginForm()
-    if form.validate_on_submit():
-        # Login and validate the user.
-        # user should be an instance of your `User` class
-        user = form.user.data
-        password = form.password.data
+    if request.method=='POST':
+        user=request.form['user']
+        password=request.form['password']
         user = db.get_id_by_user(user)[0] 
         if user and  check_password_hash(user['Password'], password):
 
@@ -92,16 +110,10 @@ def login():
 
             login_user(user)
 
-        flask.flash('Logged in successfully.')
-
-        next = flask.request.args.get('next')
-        # is_safe_url should check if the url is safe for redirects.
-        # See http://flask.pocoo.org/snippets/62/ for an example.
-        if not is_safe_url(next):
-            return flask.abort(400)
-
-        return flask.redirect(next or flask.url_for('payment'))
-    return flask.render_template('index.html', form=form)
+            return redirect("payment")
+        else:
+            flash("Username and Password Mismatch","danger")
+    return render_template('index.html')
 
 # def register_login(request):
 #     if "register" in request.method == "POST": 
@@ -113,33 +125,31 @@ def login():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    form = SignUpForm()
-    if  form.validate_on_submit():
-        User = form.user.data
-        Email = form.email.data
-        Password = generate_password_hash(form.password.data)
-       
+    if request.method=='POST':
+            try:
+                    user=request.form['user']
+                    email=request.form['email']
+                    password=generate_password_hash(request.form['password'])
 
-        db.create_user(User,Email,Password)
-        
-        # user_ids = db.get_id_by_user(user)
-   
-        user_id = db.get_id_by_user(user)[0]
-         
-        user = User(user_id['Id'])
+                    db.create_user(user,email,password)
+            
+                    user_id = db.get_id_by_user(user)[0]
+                    
+                    user = User(user_id['Id'])
 
-        login_user(user)
+                    login_user(user)
 
-        flask.flash('Logged in successfully.')
+                    flask.flash('Logged in successfully.')
 
-        next = flask.request.args.get('next')
-        # is_safe_url should check if the url is safe for redirects.
-        # See http://flask.pocoo.org/snippets/62/ for an example.
-        if not is_safe_url(next):
-            return flask.abort(400)
-        return flask.redirect(next or flask.url_for('payment'))
+                    # next = flask.request.args.get('next')
+                    # is_safe_url should check if the url is safe for redirects.
+                    # See http://flask.pocoo.org/snippets/62/ for an example.
+            except:
+                flash("Error in Insert Operation","danger")
+            finally:
+                return redirect(url_for("payment"))
     
-    return render_template('index.html', form=form) 
+    return render_template('index.html') 
     
 
 

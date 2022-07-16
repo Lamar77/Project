@@ -13,8 +13,8 @@ class ProductsDatabase:
   #   self.execute_hash_query('CREATE TABLE IF NOT EXISTS "Likes" ( "User"	TEXT NOT NULL, "PostId"	INTEGER NOT NULL );') 
     
     
-  def create_user(self,User,Email,Password):
-    self.execute_hash_query("""INSERT INTO Users (User,Email,Password) VALUES (?, ?, ?)""",User,Email,Password)
+  def create_user(self,user,email,password):
+    self.execute_hash_query("""INSERT INTO Users (User,Email,Password) VALUES (?, ?, ?)""",user,email,password)
  
  # conn.commit() 
 
